@@ -1,4 +1,5 @@
 const fs = require("fs");
+const chalk = require("chalk");
 
 const loadNotes = () => {
     try {
@@ -31,23 +32,23 @@ const addNote = function (title, body) {
             body,
         });
         saveNotes(notes);
-        console.log("New note added.");
+        console.log(chalk.green.bold("New note added."));
     } else {
-        console.log("Note title taken!");
+        console.log(chalk.red.bold("Note title taken!"));
     }
 };
 
 const removeNote = function (title) {
     const notes = loadNotes();
-    const filteredNotes = notes.filter((note) => {
+    const notesToKeep = notes.filter((note) => {
         return note.title !== title;
     });
 
-    if (filteredNotes.length === notes.length - 1) {
-        saveNotes(filteredNotes);
-        console.log("The note has been deleted.");
+    if (notesToKeep.length === notes.length - 1) {
+        saveNotes(notesToKeep);
+        console.log(chalk.green.bold("Note removed!"));
     } else {
-        console.log("Oops, the title does not exist.");
+        console.log(chalk.red.bold("No note found!"));
     }
 };
 
