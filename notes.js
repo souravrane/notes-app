@@ -16,11 +16,11 @@ const saveNotes = (notes) => {
     fs.writeFileSync("notes.json", dataJSON);
 };
 
-const getNotes = function () {
+const getNotes = () => {
     return "Your notes...";
 };
 
-const addNote = function (title, body) {
+const addNote = (title, body) => {
     const notes = loadNotes();
     const duplicateNotes = notes.filter((note) => {
         return note.title === title;
@@ -38,7 +38,7 @@ const addNote = function (title, body) {
     }
 };
 
-const removeNote = function (title) {
+const removeNote = (title) => {
     const notes = loadNotes();
     const notesToKeep = notes.filter((note) => {
         return note.title !== title;

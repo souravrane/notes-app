@@ -1,1 +1,5 @@
-[{"title":"Hehe","body":"Hehe notesss"},{"title":"Dog","body":"take her out"}]
+[
+    { "title": "Hehe", "body": "Hehe notesss" },
+    { "title": "Dog", "body": "take her out" },
+    { "title": "cool stuff", "body": "chalks" }
+]
