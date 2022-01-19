@@ -16,6 +16,10 @@ const saveNotes = (notes) => {
     fs.writeFileSync("notes.json", dataJSON);
 };
 
+const getNotes = () => {
+    return "Your notes...";
+};
+
 const addNote = (title, body) => {
     const notes = loadNotes();
     const duplicateNote = notes.find((note) => note.title === title);
